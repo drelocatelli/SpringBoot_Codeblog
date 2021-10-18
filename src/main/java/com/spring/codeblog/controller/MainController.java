@@ -16,13 +16,21 @@ import com.spring.codeblog.model.Post;
 public class MainController {
 	
 	private static String title = "Code Blog";
+	private static ModelAndView model = new ModelAndView();
 	
 	@Autowired
 	CodeblogService codeblogService;
 	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public ModelAndView main() {
+		model.setViewName("index");
+		model.addObject("title", title);
+		return model;
+	}
+	
 	@RequestMapping(value = "/posts", method = RequestMethod.GET)
 	public ModelAndView getPosts() {
-		ModelAndView model = new ModelAndView("posts");
+		model.setViewName("posts");
 		List<Post> posts = codeblogService.findAll();
 		model.addObject("posts", posts);
 		model.addObject("title", title);
