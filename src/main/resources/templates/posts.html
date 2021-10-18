@@ -1,7 +1,28 @@
 		<div th:replace="partials/header"></div>
 
-		Meus posts
+		<section>
+			<div class="container" style="width:60%; padding-bottom:30px;">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item active" aria-current="page">
+						<span th:text="'Postagens de ' + ${title}"></span>
+					</li>
+				</ol>
+			</nav>
+				<div th:each="post: ${posts}" class="card shadow-sm bg-white rounded" style="margin-top:20px;">
+					<div class="card-body">
+						<span th:text="${post.titulo}"></span>
+						<hr>
+						<p class="card-subtitle mb-2 text-muted" style="font-size: 0.8rem;">
+							<span th:text="'Postado por: ' +${post.autor}"></span>
+							|
+							<span th:text="'Data: ' + ${post.data}"></span>
+						</p>
+						<p class="card-text"><span th:utext="${#strings.abbreviate(post.texto,400)} "></span></p>
+					</div>
+				</div>
 
-		<section></section>
+			</div>
+		</section>
 
 		<div th:replace="partials/footer"></div>
