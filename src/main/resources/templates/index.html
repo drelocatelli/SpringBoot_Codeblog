@@ -1,15 +1,15 @@
-		<div th:replace="partials/header"></div>
+		<header th:replace="partials/header"></header>
 
 			<section>
 				<div class="container" style="width:60%; padding-bottom:30px;">
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item active" aria-current="page">
-								<span th:text="'Bem vindo ao ' + ${title}"></span>
+								<thcontent th:text="'Bem vindo ao ' + ${title}" />
 							</li>
 						</ol>
 					</nav>
 				</div>
 			</section>
 
-		<div th:replace="partials/footer"></div>
+		<footer th:replace="partials/footer"></footer>
