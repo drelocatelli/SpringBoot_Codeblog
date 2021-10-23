@@ -1,5 +1,6 @@
 package com.spring.codeblog.api;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,15 +23,13 @@ public class MainAPI {
 	@GetMapping("/")
 	public List<Post> getAllPosts(){
 		List<Post> posts = codeblogService.findAll("DESC");
-		
 		return posts;
 	}
 	
 	@GetMapping("/post/{id}")
 	public Post getAllPosts(@PathVariable long id){
-		Post posts = codeblogService.findById(id);
-		
-		return posts;
+		Post post = codeblogService.findById(id);
+		return post;
 	}
 
 }

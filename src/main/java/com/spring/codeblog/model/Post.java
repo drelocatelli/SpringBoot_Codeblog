@@ -25,6 +25,19 @@ public class Post {
 	@Lob
 	private String texto;
 	
+	public Post() {
+
+	}
+	
+	public Post(Long id, @NotBlank String titulo, @NotBlank String autor, LocalDate data, @NotBlank String texto) {
+		super();
+		this.id = id;
+		this.titulo = titulo;
+		this.autor = autor;
+		this.data = data;
+		this.texto = texto;
+	}
+
 	public Long getId() {
 		return id;
 	}
