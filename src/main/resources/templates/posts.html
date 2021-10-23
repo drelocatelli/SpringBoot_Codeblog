@@ -1,4 +1,3 @@
-
 <header th:replace="partials/header" />
 
 <section>
@@ -17,7 +16,7 @@
 					| <thcontent th:text="${post.data}" />
 				</p>
 				<hr>
-				<a th:href="'posts/'+${post.id}" style="color:black; font-weight:bold; text-decoration:none;">
+				<a th:href="'post/'+${post.id}" style="color:black; font-weight:bold; text-decoration:none;">
 					<h4 class="card-title">
 						<thcontent th:text="${post.titulo}" />
 					</h4>

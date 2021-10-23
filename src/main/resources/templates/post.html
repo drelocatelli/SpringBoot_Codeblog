@@ -2,32 +2,30 @@
 
 <section>
 	<div class="container" style="width: 60%; padding-bottom: 30px;">
-		<nav aria-label="breadcrumb">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item active" aria-current="page"><thcontent
-						th:text="'Postagens de ' + ${title}" /></li>
-			</ol>
-		</nav>
-		<div class="card shadow-sm bg-white rounded"
-			style="margin-top: 20px;">
+		<div class="card shadow-sm bg-white rounded" style="margin-top: 20px;">
 			<div class="card-body">
 				<p class="card-subtitle mb-2 text-muted" style="font-size: 0.8rem;">
 					<thcontent th:text="${post.autor}" />
-					| <thcontent th:text="${post.data}" />
+					|
+					<thcontent th:text="${post.data}" />
 				</p>
 				<hr>
-				<a href="javascript:void(0);" style="color:black; font-weight:bold; text-decoration:none;">
-					<h4 class="card-title">
-						<thcontent th:text="${post.titulo}" />
-					</h4>
-				</a>
+				<h4 class="card-title">
+					<thcontent th:text="${post.titulo}" />
+				</h4>
 
 				<p class="card-text">
 					<span th:text="${post.texto} "></span>
 				</p>
 			</div>
 		</div>
-
+		<br>
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item active" aria-current="page"><a
+					href="/posts">Ver todas as postagens</a></li>
+			</ol>
+		</nav>
 	</div>
 </section>
 

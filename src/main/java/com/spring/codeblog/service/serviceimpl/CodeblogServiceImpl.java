@@ -3,6 +3,7 @@ package com.spring.codeblog.service.serviceimpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.spring.codeblog.model.Post;
@@ -16,8 +17,15 @@ public class CodeblogServiceImpl implements CodeblogService {
 	CodeblogRepository codeblogRepository;
 
 	@Override
-	public List<Post> findAll() {
-		return codeblogRepository.findAll();
+	public List<Post> findAll(String order) {
+		List orderby = null;
+		if(order.equals("DESC")) {
+			orderby = codeblogRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
+		}else if(order.equals("ASC")) {
+			orderby = codeblogRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
+		}
+		
+		return orderby;
 	}
 
 	@Override
