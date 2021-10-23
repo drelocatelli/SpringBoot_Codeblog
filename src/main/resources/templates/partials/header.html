@@ -35,12 +35,16 @@
 					<li class="nav-item"><a class="nav-link" href="/posts">Postagens</a>
 					<li class="nav-item"><a class="nav-link" href="/api">API</a>
 					</li>
-					<li class="nav-item dropdown"><a
+					<li class="nav-item" sec:authorize="!isAuthenticated()">
+						<a href="/login" class="nav-link">Login</a>
+					</li>
+					<li class="nav-item dropdown" sec:authorize="isAuthenticated()"><a
 						class="nav-link dropdown-toggle" href="javascript:void(0);" id="navbarDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false"> Administração </a>
+						aria-expanded="false"> Administrar </a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="/login">Login</a>
+							<a class="dropdown-item" href="/newpost">Novo Post</a>
+							<a href="/logout" class="dropdown-item">Logout</a>
 						</div></li>
 				</ul>
 			</div>
