@@ -11,6 +11,7 @@
 		</nav>
 
 		<div>
+			<th:block th:include="partials/mensagemValidacao"></th:block>
 			<form method="post">
 				<div class="form-group">
 					<input type="text" class="form-control" name="titulo"
@@ -36,5 +37,13 @@
 
 	</div>
 </section>
+
+<script>
+	$('#summernote').summernote({
+		placeholder: 'Texto *',
+		tabsize: 2,
+		height: 300
+	});
+</script>
 
 <footer th:replace="partials/footer" />
