@@ -22,7 +22,7 @@ import com.spring.codeblog.model.Post;
 @Controller
 public class MainController {
 	
-	private static String title = "Code Blog";
+	public static String title = "Code Blog";
 	private static ModelAndView model = new ModelAndView();
 	
 	@Autowired

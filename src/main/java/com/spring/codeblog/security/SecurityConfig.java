@@ -1,4 +1,4 @@
-package com.spring.codeblog.configuration;
+package com.spring.codeblog.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -24,8 +24,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable().authorizeRequests()
 		.antMatchers(AUTH_LIST).permitAll()
 		.anyRequest().authenticated()
-		.and().formLogin().permitAll()
-		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
+		.and()
+		.formLogin()
+		.loginPage("/login")
+		.permitAll()
+		.and().logout().logoutUrl("/logout")
+//		.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+		;
 	}
 
 	@Override
