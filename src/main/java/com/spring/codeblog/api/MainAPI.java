@@ -20,7 +20,7 @@ public class MainAPI {
 	@Autowired
 	CodeblogService codeblogService;
 	
-	@GetMapping("/")
+	@GetMapping()
 	public List<Post> getAllPosts(){
 		List<Post> posts = codeblogService.findAll("DESC");
 		return posts;
